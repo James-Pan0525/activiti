@@ -1447,7 +1447,7 @@
                 start++;
                 res[0] = ["M", x, y];
             }
-            var crz = pathArray.length == 3 && pathArray[0][0] == "M" && pathArray[1][0].toUpperCase() == "R" && pathArray[2][0].toUpperCase() == "Z";
+            var crz = pathArray.length == 3 && pathArray[0][0] == "M" && pathArray[1][0].toUpperCase() == "com.sipingsoft.estate.common.core.util.R" && pathArray[2][0].toUpperCase() == "Z";
             for (var r, pa, i = start, ii = pathArray.length; i < ii; i++) {
                 res.push(r = []);
                 pa = pathArray[i];
@@ -1469,7 +1469,7 @@
                         case "H":
                             r[1] = +pa[1] + x;
                             break;
-                        case "R":
+                        case "com.sipingsoft.estate.common.core.util.R":
                             var dots = [x, y][concat](pa.slice(1));
                             for (var j = 2, jj = dots.length; j < jj; j++) {
                                 dots[j] = +dots[j] + x;
@@ -1486,11 +1486,11 @@
                                 r[j] = +pa[j] + ((j % 2) ? x : y);
                             }
                     }
-                } else if (pa[0] == "R") {
+                } else if (pa[0] == "com.sipingsoft.estate.common.core.util.R") {
                     dots = [x, y][concat](pa.slice(1));
                     res.pop();
                     res = res[concat](catmullRom2bezier(dots, crz));
-                    r = ["R"][concat](pa.slice(-2));
+                    r = ["com.sipingsoft.estate.common.core.util.R"][concat](pa.slice(-2));
                 } else {
                     for (var k = 0, kk = pa.length; k < kk; k++) {
                         r[k] = pa[k];
