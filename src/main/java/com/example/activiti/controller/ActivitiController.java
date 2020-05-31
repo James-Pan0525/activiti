@@ -38,13 +38,13 @@ public class ActivitiController {
             Model modelData = repositoryService.newModel();
 
             ObjectNode modelObjectNode = objectMapper.createObjectNode();
-            modelObjectNode.put(ModelDataJsonConstants.MODEL_NAME, "hello1111");
+            modelObjectNode.put(ModelDataJsonConstants.MODEL_NAME, "process");
             modelObjectNode.put(ModelDataJsonConstants.MODEL_REVISION, 1);
-            String description = "hello1111";
+            String description = "process";
             modelObjectNode.put(ModelDataJsonConstants.MODEL_DESCRIPTION, description);
             modelData.setMetaInfo(modelObjectNode.toString());
-            modelData.setName("hello1111");
-            modelData.setKey("12313123");
+            modelData.setName("process");
+            modelData.setKey("process");
 
             //保存模型
             repositoryService.saveModel(modelData);
